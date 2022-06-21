@@ -1,6 +1,7 @@
 package com.example.myrecyclerview.adapter
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -50,6 +51,15 @@ class HeroAdapter:RecyclerView.Adapter<HeroAdapter.ListViewHolder>() {
         listHero.clear()
         listHero.addAll(items)
         notifyDataSetChanged()
+    }
+    fun deleteItem(i: Int){
+        listHero.removeAt(i)
+        notifyDataSetChanged()
+    }
+
+    fun getUserName(i: Int): String?{
+        Log.d("ListHero", listHero.toString())
+        return listHero[i].login
     }
 }
 

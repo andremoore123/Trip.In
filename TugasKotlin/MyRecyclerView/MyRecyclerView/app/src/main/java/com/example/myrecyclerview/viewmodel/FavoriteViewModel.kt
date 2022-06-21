@@ -32,7 +32,7 @@ class FavoriteViewModel(val database: UserDao, application: Application) : Andro
         for (i in 0 until countData) {
             val url = "https://api.github.com/users/${userList[i].user_id}"
             val client = AsyncHttpClient()
-            val apiKey = "token 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"
+            val apiKey = "token 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"
             client.addHeader("Authorization", apiKey)
             client.addHeader("User-Agent", "request")
             client.get(url, object : AsyncHttpResponseHandler() {
@@ -72,7 +72,7 @@ class FavoriteViewModel(val database: UserDao, application: Application) : Andro
 
         return listUsers
     }
-    fun deleteUser(){
-        database.delete()
+    fun deleteUser(userID: String?){
+        database.deleteUser(userID)
     }
 }

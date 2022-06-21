@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.myrecyclerview.adapter.HeroAdapter
+import com.example.myrecyclerview.adapter.SwipeGesture
 import com.example.myrecyclerview.data.database.FavoriteViewModelFactory
 import com.example.myrecyclerview.data.database.UserDatabase
 import com.example.myrecyclerview.data.models.HeroData
@@ -39,7 +42,17 @@ class FavoriteActivity : AppCompatActivity() {
                 adapter.notifyDataSetChanged()
             }
         }
-        binding.buttonDelete.setOnClickListener{viewModel.deleteUser()}
+        val swipeToDeleteCallBack = object : SwipeGesture(){
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.adapterPosition
+                viewModel.deleteUser(adapter.getUserName(position).toString())
+                adapter.deleteItem(position)
+                binding.listHero.adapter?.notifyItemRemoved(position)
+                adapter.notifyDataSetChanged()
+            }
+        }
+        val itemTouchHelper = ItemTouchHelper(swipeToDeleteCallBack)
+        itemTouchHelper.attachToRecyclerView(binding.listHero)
     }
 
 
@@ -54,6 +67,8 @@ class FavoriteActivity : AppCompatActivity() {
                 showSelectedUser(data)
             }
         })
+
+
     }
     private fun showSelectedUser(user: HeroData) {
         val move = Intent(this, DetailActivity::class.java)

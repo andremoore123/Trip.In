@@ -13,8 +13,9 @@ interface UserDao {
 
     @Insert
     fun insertAll(vararg user: User)
-    @Query("DELETE FROM favorite_user")
-    fun delete()
+
+    @Query("DELETE FROM favorite_user WHERE :searchUser = user_id")
+    fun deleteUser(searchUser: String?)
 
     @Query("SELECT COUNT(*) FROM favorite_user")
     fun countAllData():Int

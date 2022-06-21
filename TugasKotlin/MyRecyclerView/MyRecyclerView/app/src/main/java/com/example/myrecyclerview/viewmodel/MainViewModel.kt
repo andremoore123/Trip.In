@@ -23,7 +23,7 @@ class MainViewModel : ViewModel() {
         val listItems = ArrayList<HeroData>()
         val url = "https://api.github.com/search/users?q=$users"
         val client = AsyncHttpClient()
-        val apiKey = "token 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"
+        val apiKey = "token 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"
         client.addHeader("Authorization", apiKey)
         client.addHeader("User-Agent", "request")
         client.get(url, object: AsyncHttpResponseHandler() {

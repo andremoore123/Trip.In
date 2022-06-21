@@ -19,8 +19,6 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -62,4 +60,5 @@ dependencies {
     implementation "androidx.room:room-ktx:$roomVersion"
     kapt "androidx.room:room-compiler:$roomVersion"
     androidTestImplementation "androidx.room:room-testing:$roomVersion"
+
 }

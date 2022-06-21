@@ -10,6 +10,7 @@ import com.example.myrecyclerview.data.database.UserDao
 import com.example.myrecyclerview.data.models.HeroData
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
+import com.loopj.android.http.BuildConfig
 import cz.msebera.android.httpclient.Header
 import org.json.JSONObject
 
@@ -22,7 +23,7 @@ class DetailViewModel(val database: UserDao, application: Application) : Android
     fun setDetailUser(user: String) {
         val url = "https://api.github.com/users/$user"
         val client = AsyncHttpClient()
-        val apiKey = "token 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"
+        val apiKey = "token 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"
         client.addHeader("Authorization", apiKey)
         client.addHeader("User-Agent", "request")
         client.get(url, object: AsyncHttpResponseHandler() {
