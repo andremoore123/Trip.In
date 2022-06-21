@@ -22,7 +22,7 @@ class FollowersViewModel : ViewModel() {
         val listFollowers = ArrayList<HeroData>()
         var url = "https://api.github.com/users/$user/followers"
         val client = AsyncHttpClient()
-        val apiKey = "token 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"
+        val apiKey = "token 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"
         client.addHeader("Authorization", apiKey)
         client.addHeader("User-Agent", "request")
         client.get(url, object : AsyncHttpResponseHandler() {

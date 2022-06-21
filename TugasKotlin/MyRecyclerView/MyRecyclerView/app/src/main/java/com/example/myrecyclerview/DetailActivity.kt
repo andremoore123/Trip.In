@@ -2,6 +2,7 @@ package com.example.myrecyclerview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.annotation.StringRes
 import androidx.lifecycle.ViewModelProvider
 import androidx.room.Insert
@@ -44,9 +45,9 @@ class DetailActivity : AppCompatActivity() {
             viewModelFactory
         ).get(DetailViewModel::class.java)
 
-//        binding.detailFavorite.setOnClickListener {
-//            detailViewModel.insertDataToDatabase(it.toString())
-//        }
+        binding.detailFavorite.setOnClickListener {
+           detailViewModel.insertDataToDatabase(user.login.toString())
+        }
         user.login?.let {
             detailViewModel.setDetailUser(it)
         }

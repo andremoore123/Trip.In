@@ -13,6 +13,12 @@ interface UserDao {
 
     @Insert
     fun insertAll(vararg user: User)
-    @Delete
-    fun delete(user: User)
+    @Query("DELETE FROM favorite_user")
+    fun delete()
+
+    @Query("SELECT COUNT(*) FROM favorite_user")
+    fun countAllData():Int
+
+    @Query("SELECT * FROM favorite_user LIMIT 1")
+    fun selectFirstData(): User
 }

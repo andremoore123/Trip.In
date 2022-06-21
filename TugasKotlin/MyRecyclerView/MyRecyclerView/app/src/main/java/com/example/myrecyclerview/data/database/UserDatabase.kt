@@ -25,6 +25,7 @@ abstract class UserDatabase : RoomDatabase() {
                         UserDatabase::class.java,
                         "favorite_user"
                     )
+                        .allowMainThreadQueries()
                         .fallbackToDestructiveMigration()
                         .build()
                     INSTANCE = instance

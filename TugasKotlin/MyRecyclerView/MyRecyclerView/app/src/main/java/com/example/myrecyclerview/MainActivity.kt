@@ -57,6 +57,11 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
                 }
+            R.id.favorite ->{
+                val intent = Intent(this, FavoriteActivity::class.java)
+                startActivity(intent)
+                true
+            }
             else -> false
         }
         }

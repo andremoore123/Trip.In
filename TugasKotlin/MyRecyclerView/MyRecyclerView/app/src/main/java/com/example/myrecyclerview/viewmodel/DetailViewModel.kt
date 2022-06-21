@@ -5,8 +5,8 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.myrecyclerview.data.database.User
 import com.example.myrecyclerview.data.database.UserDao
-import com.example.myrecyclerview.data.database.UserDatabase
 import com.example.myrecyclerview.data.models.HeroData
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
@@ -15,7 +15,6 @@ import org.json.JSONObject
 
 class DetailViewModel(val database: UserDao, application: Application) : AndroidViewModel(application) {
     val detailUser = MutableLiveData<HeroData>()
-
     companion object {
         private val TAG = DetailViewModel::class.java.simpleName
     }
@@ -23,7 +22,7 @@ class DetailViewModel(val database: UserDao, application: Application) : Android
     fun setDetailUser(user: String) {
         val url = "https://api.github.com/users/$user"
         val client = AsyncHttpClient()
-            val apiKey = "token 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"
+        val apiKey = "token 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"
         client.addHeader("Authorization", apiKey)
         client.addHeader("User-Agent", "request")
         client.get(url, object: AsyncHttpResponseHandler() {
@@ -64,8 +63,9 @@ class DetailViewModel(val database: UserDao, application: Application) : Android
     fun getDetailUser() : LiveData<HeroData> {
         return detailUser
     }
-//    fun insertDataToDatabase(user: String){
-//        val username = User(0, user)
-//        userDao.addUser(username)
-//    }
+    fun insertDataToDatabase(user: String){
+        val username = User(0, user)
+        database.addUser(username)
+        Log.d("Hasil", "Berhasil")
+    }
 }
