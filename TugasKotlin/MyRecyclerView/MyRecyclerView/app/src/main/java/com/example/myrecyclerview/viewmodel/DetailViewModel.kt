@@ -23,7 +23,7 @@ class DetailViewModel(val database: UserDao, application: Application) : Android
     fun setDetailUser(user: String) {
         val url = "https://api.github.com/users/$user"
         val client = AsyncHttpClient()
-        val apiKey = "token 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"
+        val apiKey = "token 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"
         client.addHeader("Authorization", apiKey)
         client.addHeader("User-Agent", "request")
         client.get(url, object: AsyncHttpResponseHandler() {

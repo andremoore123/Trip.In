@@ -5,11 +5,13 @@
         android:id="@+id/favorite"
         android:icon="@drawable/ic_round_favorite_24"
         app:showAsAction="ifRoom"
-        android:title="favorite" />
+        android:title="favorite"
+        android:iconTint="?attr/colorPrimaryVariant"/>
 
     <item
         android:id="@+id/settings"
         android:icon="@drawable/ic_baseline_settings_24"
         app:showAsAction="ifRoom"
-        android:title="setting" />
+        android:title="setting"
+        android:iconTint="?attr/colorPrimaryVariant"/>
 </menu>

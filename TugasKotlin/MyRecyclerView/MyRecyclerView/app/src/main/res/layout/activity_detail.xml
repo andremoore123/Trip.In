@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:layout_height="match_parent">
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -23,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -36,6 +36,7 @@
                 android:id="@+id/collapsing_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="?attr/colorPrimary"
                 app:contentScrim="?attr/colorPrimary"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
@@ -43,7 +44,7 @@
                     android:id="@+id/profile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#a2d2ff">
+                    android:background="?attr/colorSecondary">
 
 
                     <ImageView
@@ -66,7 +67,6 @@
                         android:layout_marginTop="16dp"
                         android:layout_marginRight="16dp"
                         android:textAlignment="center"
-                        android:textColor="@android:color/white"
                         android:textSize="26sp" />
 
                     <TextView
@@ -105,7 +105,8 @@
                         android:id="@+id/toolbar"
                         android:layout_width="match_parent"
                         android:layout_height="?attr/actionBarSize"
-                        app:layout_collapseMode="pin" />
+                        app:layout_collapseMode="pin"
+                        app:titleTextColor="?attr/colorOnPrimary" />
 
                 </RelativeLayout>
 
@@ -119,8 +120,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:tabIndicatorHeight="4dp"
-                app:tabTextColor="@android:color/white" />
+                app:tabBackground="?attr/colorSecondary"
+                app:tabIndicatorHeight="4dp" />
 
         </com.google.android.material.appbar.AppBarLayout>
 

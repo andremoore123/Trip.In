@@ -36,7 +36,8 @@
             android:text="Search"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/edt_seach_user"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+            android:backgroundTint="?attr/colorSecondary"/>
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -67,7 +68,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="?attr/colorSecondary">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/topAppBar"
@@ -75,7 +77,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:menu="@menu/top_app_bar"
-                app:title="Github User" />
+                app:title="Github User"
+                android:background="?attr/colorSecondary"/>
 
         </com.google.android.material.appbar.AppBarLayout>
 

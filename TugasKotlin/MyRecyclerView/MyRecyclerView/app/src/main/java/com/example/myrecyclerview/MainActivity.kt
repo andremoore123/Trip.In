@@ -2,10 +2,12 @@ package com.example.myrecyclerview
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myrecyclerview.adapter.HeroAdapter
@@ -14,7 +16,7 @@ import com.example.myrecyclerview.databinding.ActivityMainBinding
 import com.example.myrecyclerview.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
-
+    lateinit var sharedPreferences: SharedPreferences
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: HeroAdapter
     private lateinit var viewModel: MainViewModel
@@ -24,7 +26,12 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE)
+        when (sharedPreferences.getInt("night_mode", 2)) {
+            0 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            1 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            else -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+        }
 //        binding.listHero.setHasFixedSize(true)
 
         showRecyclerView()

@@ -4,8 +4,8 @@ import androidx.room.*
 
 @Entity(tableName = "favorite_user")
 data class User(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    val id: Int = 0,
+    @PrimaryKey
     val user_id: String
 )
 
