@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/activity_main.xml" value="0.3880208333333333" />
+        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/activity_profile.xml" value="0.3333333333333333" />
+        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/activity_splash_screen.xml" value="0.3880208333333333" />
+        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/menu/navigation.xml" value="0.21979166666666666" />
+        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/menu/profile.xml" value="0.21979166666666666" />
+        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/menu/top_app_bar.xml" value="0.21979166666666666" />
       </map>
     </option>
   </component>
