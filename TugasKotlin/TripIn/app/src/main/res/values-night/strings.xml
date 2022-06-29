@@ -6,4 +6,7 @@
     <string name="content_description_account">Account Description</string>
     <string name="nama">Andre Eka Putra Simanjuntak</string>
     <string name="email">andremoore431@gmail.com</string>
+    <string name="home_title">Explore</string>
+    <string name="label_profile">Profile</string>
+    <string name="creator">Creator</string>
 </resources>
