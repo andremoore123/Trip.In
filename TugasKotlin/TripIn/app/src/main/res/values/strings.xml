@@ -13,4 +13,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="creator">Creator</string>
+    <string name="deskripsi_user">Hi! I\'m Andre. I\'m from Pekanbaru and currently studying in Telkom University. I\'m 20 years old with interests in Android Developer.</string>
+    <string name="darkMode_label">Dark Mode</string>
+    <string name="label_settings">Settings</string>
+    <string name="global_recommendation">Global Recommendation</string>
 </resources>

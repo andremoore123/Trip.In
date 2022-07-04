@@ -20,7 +20,7 @@ class SplashScreen : AppCompatActivity() {
         if (!defaultStatus){
             with (sharedPref.edit()) {
                 putBoolean(getString(R.string.status), true)
-                commit()
+                apply()
             }
             Handler().postDelayed({
                 val intent = Intent(this, MainActivity::class.java)

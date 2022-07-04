@@ -3,12 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
-        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/activity_profile.xml" value="0.3333333333333333" />
-        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/activity_splash_screen.xml" value="0.3880208333333333" />
-        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/fragment_explore.xml" value="0.3880208333333333" />
+        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/activity_profile.xml" value="0.16666666666666666" />
+        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/activity_splash_screen.xml" value="0.12" />
+        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/fragment_explore.xml" value="0.3333333333333333" />
         <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/fragment_favorite.xml" value="0.37395833333333334" />
-        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
+        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/fragment_profile.xml" value="0.14666666666666667" />
+        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/fragment_settings.xml" value="0.16666666666666666" />
+        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/horizontal_card.xml" value="0.5" />
+        <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/layout/places_card.xml" value="0.5" />
         <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3880208333333333" />
         <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/menu/navigation.xml" value="0.21979166666666666" />
         <entry key="..\:/File Codingan/TugasKotlin/TripIn/app/src/main/res/menu/profile.xml" value="0.21979166666666666" />

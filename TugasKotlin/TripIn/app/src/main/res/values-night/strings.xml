@@ -9,4 +9,7 @@
     <string name="home_title">Explore</string>
     <string name="label_profile">Profile</string>
     <string name="creator">Creator</string>
+    <string name="deskripsi_user">Hi! I\'m Andre. I\'m from pekanbaru and currently studying in Telkom University. I\'m 20 years old with interests in Android Developer.</string>
+    <string name="darkMode_label">Dark Mode</string>
+    <string name="label_settings">Settings</string>
 </resources>
