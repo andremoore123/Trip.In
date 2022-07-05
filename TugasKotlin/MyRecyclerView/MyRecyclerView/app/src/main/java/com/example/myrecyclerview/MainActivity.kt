@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showRecyclerView() {
-        adapter = HeroAdapter()
+        adapter =   HeroAdapter()
         adapter.notifyDataSetChanged()
         binding.listHero.layoutManager = LinearLayoutManager(this)
         binding.listHero.adapter = adapter

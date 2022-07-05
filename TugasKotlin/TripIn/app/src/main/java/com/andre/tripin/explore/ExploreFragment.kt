@@ -1,17 +1,20 @@
 package com.andre.tripin.explore
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.andre.tripin.DetailActivity
 import com.andre.tripin.R
 import com.andre.tripin.adapter.DataItem
 import com.andre.tripin.adapter.RecyclerViewAdapter
 
-class ExploreFragment : Fragment() {
+class ExploreFragment : Fragment(), RecyclerViewAdapter.OnItemClickListener {
     private val list: MutableList<DataItem> = createList()
 
     override fun onCreateView(
@@ -22,14 +25,14 @@ class ExploreFragment : Fragment() {
         val recyclerViewGlobal = view.findViewById<RecyclerView>(R.id.explore_recycler_global)
         recyclerViewGlobal.apply {
             layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-            adapter = RecyclerViewAdapter(list, R.layout.places_card)
+            adapter = RecyclerViewAdapter(list, R.layout.places_card, this@ExploreFragment)
         }
         recyclerViewGlobal.setHasFixedSize(true)
 
         val recyclerViewIndo = view.findViewById<RecyclerView>(R.id.explore_recycler_indonesia)
         recyclerViewIndo.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = RecyclerViewAdapter(list, R.layout.horizontal_card)
+            adapter = RecyclerViewAdapter(list, R.layout.horizontal_card, this@ExploreFragment)
         }
         recyclerViewIndo.setHasFixedSize(true)
 
@@ -48,5 +51,12 @@ class ExploreFragment : Fragment() {
             DataItem(R.drawable.ronda, "Ronda", "Hemingway said this is the perfect place to elope,A town with Roman roots and Spain's oldest bullring", "Ronda is a city in Andalusia, Spain. It has many popular attractions, including Puente Nuevo Bridge, Plaza del Toros, Júzcar, making it well worth a visit.\n"),
             DataItem(R.drawable.fenghuang, "Fenghuang", "Visit the most beautiful village in Hunan Province,Let Fenghuang's charm ease your worries and cares", "Fenghuang, located in the southwestern part of western Hunan. It has gradually transformed into a gathering place for young artistic people. The region's long and storied history, legends and folk tales are among the reasons for this as are the ancient-style stilt houses, the clear waters of the Tuojiang River and the heavily ethnic minority atmosphere. Fenghuang’s Phoenix Ancient Town is ideal for walking tours. Nestled deep in the mountains alongside a fast-flowing river, you can visit places such as the Former Residence of Shen Congwen, the Former Residence of Xiong Xiling, the Yang Family Temple, Eastgate Fortress and the Ancient City Museum. The Tuojiang River flows alongside the city walls of Phoenix Ancient Town. While there you can go rafting on the Tuojiang and see and enjoy the hundred-year-old Hmong stilt houses on either bank. This is a unique and pleasurable experience. Outside the ancient city you may spend some time visiting places such as Nanhua Mountain National Forest Park and the Miaowang (King of the Hmong) Cave.")
         )
+    }
+
+    override fun onItemClick(data: DataItem) {
+        val intent = Intent(activity, DetailActivity::class.java).apply {
+            putExtra("EXTRA", data)
+        }
+        startActivity(intent)
     }
 }
