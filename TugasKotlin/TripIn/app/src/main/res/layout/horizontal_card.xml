@@ -22,7 +22,7 @@
             android:layout_height="99dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/santorini" />
+            android:background="@drawable/santorini" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/card_title"
@@ -34,6 +34,7 @@
             app:layout_constraintBottom_toTopOf="@+id/card_subtitle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
+            android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/card_image"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
@@ -46,7 +47,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="Everythng about you"
-            android:textSize="10sp"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

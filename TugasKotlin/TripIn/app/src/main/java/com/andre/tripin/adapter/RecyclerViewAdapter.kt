@@ -43,12 +43,18 @@ class RecyclerViewAdapter(
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val item =  dataSet[position]
-        viewHolder.image.setImageResource(item.image)
+        viewHolder.image.setBackgroundResource(item.image)
         viewHolder.title.text = item.title
         viewHolder.subtitle.text = item.subtitle
 
     }
     override fun getItemCount() = dataSet.size
 
-
+    fun removeAt(position: Int) {
+        dataSet.removeAt(position)
+        notifyItemRemoved(position)
+    }
+    fun getItem(position: Int): DataItem {
+        return (dataSet[position])
+    }
 }

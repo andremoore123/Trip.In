@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.appcompat.app.AppCompatDelegate
 import com.andre.tripin.MainActivity
 import com.andre.tripin.R
@@ -20,6 +21,7 @@ import com.google.android.material.switchmaterial.SwitchMaterial
 
 class SettingsFragment : Fragment() {
     lateinit var sharedPreferences: SharedPreferences
+    private var favoriteList = mutableSetOf("")
 
     @SuppressLint("WrongConstant")
     override fun onCreateView(
@@ -51,6 +53,16 @@ class SettingsFragment : Fragment() {
                 AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
             }
         }
+        val sharedPref = activity?.getSharedPreferences("APPLICATION", Context.MODE_PRIVATE)
+        favoriteList = sharedPref?.getStringSet("LIST_FAVORITE", favoriteList) as MutableSet<String>
+        view.findViewById<Button>(R.id.settings_button_reset).setOnClickListener {
+            favoriteList.clear()
+            with (sharedPref.edit()) {
+                putStringSet("LIST_FAVORITE", favoriteList)
+                commit()
+            }
+        }
+
         return view
     }
 }
