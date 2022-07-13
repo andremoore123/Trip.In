@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navHostMainController = navHostFragment.navController
-        findViewById<BottomNavigationView>(R.id.bottom_navigation).setOnItemSelectedListener { item ->
-            when(item.itemId) {
+        findViewById<BottomNavigationView>(R.id.bottom_navigation).setOnItemSelectedListener {
+            when(it.itemId) {
                 R.id.exploreFragment -> {
                     navHostMainController.navigate(R.id.exploreFragment)
                     topAppBar.title = "Explore"

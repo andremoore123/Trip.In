@@ -18,10 +18,10 @@ import com.andre.tripin.adapter.RecyclerViewAdapter
 import com.andre.tripin.explore.ExploreFragment
 
 class FavoriteFragment : Fragment(), RecyclerViewAdapter.OnItemClickListener {
-    private var favoriteList = mutableSetOf("")
     private val list: MutableList<DataItem> = ExploreFragment().createList()
-    private val favoriteShowList = mutableListOf<DataItem>()
+    private var favoriteShowList = mutableListOf<DataItem>()
     private val indoList: MutableList<DataItem> = ExploreFragment().createIndoList()
+    private var favoriteList = mutableSetOf<String>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,8 +29,9 @@ class FavoriteFragment : Fragment(), RecyclerViewAdapter.OnItemClickListener {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_favorite, container, false)
         val sharedPref = activity?.getSharedPreferences("APPLICATION", Context.MODE_PRIVATE)
-        favoriteList = sharedPref?.getStringSet("LIST_FAVORITE", favoriteList) as MutableSet<String>
-        Log.d("List Favorite", favoriteList.toString())
+        favoriteList = sharedPref?.getStringSet("LIST_FAVORITE", mutableSetOf<String>()) as MutableSet<String>
+        Log.d("Favor List", favoriteList.toString())
+        favoriteShowList = mutableListOf()
         if (favoriteList.isNotEmpty() && (list.isNotEmpty() || indoList.isNotEmpty())){
             for (i in list){
                 if (favoriteList.contains(i.title)){
@@ -43,7 +44,6 @@ class FavoriteFragment : Fragment(), RecyclerViewAdapter.OnItemClickListener {
                 }
             }
         }
-
         val recyclerViewFavorite = view.findViewById<RecyclerView>(R.id.favorite_fragment_recycler)
         recyclerViewFavorite.apply {
             layoutManager = LinearLayoutManager(activity)
@@ -54,11 +54,13 @@ class FavoriteFragment : Fragment(), RecyclerViewAdapter.OnItemClickListener {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val adapter = recyclerViewFavorite.adapter as RecyclerViewAdapter
                 favoriteList.remove((adapter.getItem(viewHolder.adapterPosition)).title)
-                adapter.removeAt(viewHolder.adapterPosition)
+                Log.d("Favor remove", favoriteList.toString())
                 with (sharedPref.edit()) {
                     putStringSet("LIST_FAVORITE", favoriteList)
-                    commit()
+                    apply()
                 }
+                adapter.removeAt(viewHolder.adapterPosition)
+
             }
         }
         val itemTouchHelper = ItemTouchHelper(swipeHandler)
@@ -68,9 +70,9 @@ class FavoriteFragment : Fragment(), RecyclerViewAdapter.OnItemClickListener {
     }
 
     override fun onItemClick(data: DataItem) {
-        val intent = Intent(activity, DetailActivity::class.java).apply {
+        Intent(activity, DetailActivity::class.java).apply {
             putExtra("EXTRA", data)
+            startActivity(this)
         }
-        startActivity(intent)
     }
 }

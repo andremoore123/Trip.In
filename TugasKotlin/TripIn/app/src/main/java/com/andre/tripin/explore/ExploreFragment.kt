@@ -105,9 +105,9 @@ class ExploreFragment : Fragment(), RecyclerViewAdapter.OnItemClickListener {
         )}
 
     override fun onItemClick(data: DataItem) {
-        val intent = Intent(activity, DetailActivity::class.java).apply {
+        Intent(activity, DetailActivity::class.java).apply {
             putExtra("EXTRA", data)
+            startActivity(this)
         }
-        startActivity(intent)
     }
 }

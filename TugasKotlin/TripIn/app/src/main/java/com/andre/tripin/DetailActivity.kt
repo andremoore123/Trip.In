@@ -12,7 +12,7 @@ import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class DetailActivity : AppCompatActivity() {
-    private var favoriteList = mutableSetOf("")
+    private var favoriteList = mutableSetOf<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -37,7 +37,7 @@ class DetailActivity : AppCompatActivity() {
                 extras?.title?.let { it1 -> favoriteList.add(it1) }
                 with (sharedPref.edit()) {
                     putStringSet("LIST_FAVORITE", favoriteList)
-                    commit()
+                    apply()
                 }
                 Log.d("List Favorite", favoriteList.toString())
             }

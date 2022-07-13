@@ -58,8 +58,8 @@ class SettingsFragment : Fragment() {
         view.findViewById<Button>(R.id.settings_button_reset).setOnClickListener {
             favoriteList.clear()
             with (sharedPref.edit()) {
-                putStringSet("LIST_FAVORITE", favoriteList)
-                commit()
+                putStringSet("LIST_FAVORITE", mutableSetOf<String>())
+                apply()
             }
         }
 
